@@ -1,4 +1,4 @@
-FROM thrivaldi/node:8.1.3
+FROM thrivaldi/node:alpine
 
 ENV RADIX_VERSION 3.0.0-0
 ENV RADIXCLI_VERSION 1.1.2 
