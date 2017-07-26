@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  radix:
+    image: thrivaldi/radix:alpine
+    volumes:
+      - /media/containers/radix:/shared
+    ports:
+      - 9500:9500
+    stdin_open: true
+    tty: true
+    depends_on:
+      - mongodb
+      - redis
+  mongodb:
+    image: mvertes/alpine-mongo
+    volumes:
+      - /media/containers/mongo:/data/db 
+    ports:
+      - 27017:27017
+
+  redis:
+    image: redis:alpine
+    ports:
+      - 6379:6379
